@@ -1,0 +1,128 @@
+ <!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cairo Korean School</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;600&family=Noto+Sans+KR:wght@300;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Cairo', sans-serif;
+    background: #f4f6f9;
+    text-align: center;
+}
+
+.korean {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+header {
+    background: #0b1d3a;
+    color: white;
+    padding: 20px;
+}
+
+nav {
+    background: #162f5c;
+    padding: 10px;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.hero {
+    background: #333;
+    color: white;
+    padding: 80px 20px;
+}
+
+.section {
+    padding: 40px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    background: #ff3b3b;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+    <h1 id="title">Cairo Korean School</h1>
+    <p id="subtitle">تعلم اللغة والثقافة الكورية</p>
+
+    <button onclick="setLang('ar')">عربي 🇪🇬</button>
+    <button onclick="setLang('ko')">한국어 🇰🇷</button>
+</header>
+
+<nav>
+    <a href="#" id="home">الرئيسية</a>
+    <a href="#" id="courses">الكورسات</a>
+    <a href="#" id="about">عنّا</a>
+    <a href="#" id="contact">تواصل</a>
+</nav>
+
+<section class="hero">
+    <h1 id="heroTitle">ابدأ رحلتك الآن</h1>
+    <p id="heroDesc">تعلم الكورية بسهولة واحتراف</p>
+</section>
+
+<section class="section">
+    <h2 id="servicesTitle">خدماتنا</h2>
+
+    <p id="servicesDesc">كورسات - ثقافة - منح</p>
+</section>
+
+<script>
+function setLang(lang) {
+    if (lang === 'ar') {
+        document.body.dir = "rtl";
+        document.body.classList.remove("korean");
+
+        document.getElementById("title").innerText = "Cairo Korean School";
+        document.getElementById("subtitle").innerText = "تعلم اللغة والثقافة الكورية";
+        document.getElementById("home").innerText = "الرئيسية";
+        document.getElementById("courses").innerText = "الكورسات";
+        document.getElementById("about").innerText = "عنّا";
+        document.getElementById("contact").innerText = "تواصل";
+        document.getElementById("heroTitle").innerText = "ابدأ رحلتك الآن";
+        document.getElementById("heroDesc").innerText = "تعلم الكورية بسهولة واحتراف";
+        document.getElementById("servicesTitle").innerText = "خدماتنا";
+        document.getElementById("servicesDesc").innerText = "كورسات - ثقافة - منح";
+    }
+
+    if (lang === 'ko') {
+        document.body.dir = "ltr";
+        document.body.classList.add("korean");
+
+        document.getElementById("title").innerText = "카이로 한국 학교";
+        document.getElementById("subtitle").innerText = "한국어와 한국 문화를 배우세요";
+        document.getElementById("home").innerText = "홈";
+        document.getElementById("courses").innerText = "강의";
+        document.getElementById("about").innerText = "소개";
+        document.getElementById("contact").innerText = "문의";
+        document.getElementById("heroTitle").innerText = "지금 시작하세요";
+        document.getElementById("heroDesc").innerText = "쉽고 전문적으로 한국어 배우기";
+        document.getElementById("servicesTitle").innerText = "서비스";
+        document.getElementById("servicesDesc").innerText = "강의 - 문화 - 장학금";
+    }
+}
+</script>
+
+</body>
+</html>
