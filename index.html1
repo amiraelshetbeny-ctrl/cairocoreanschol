@@ -5,124 +5,156 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Cairo Korean School</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;600&family=Noto+Sans+KR:wght@300;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;600&display=swap" rel="stylesheet">
 
 <style>
-body {
-    margin: 0;
-    font-family: 'Cairo', sans-serif;
-    background: #f4f6f9;
-    text-align: center;
+
+body{
+margin:0;
+font-family:'Cairo',sans-serif;
+background:#f5f7fb;
 }
 
-.korean {
-    font-family: 'Noto Sans KR', sans-serif;
+header{
+background:linear-gradient(90deg,#0f2027,#203a43,#2c5364);
+color:white;
+padding:20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
 }
 
-header {
-    background: #0b1d3a;
-    color: white;
-    padding: 20px;
+.logo{
+font-size:22px;
+font-weight:bold;
 }
 
-nav {
-    background: #162f5c;
-    padding: 10px;
+nav a{
+color:white;
+margin:0 15px;
+text-decoration:none;
+font-weight:600;
 }
 
-nav a {
-    color: white;
-    margin: 0 15px;
-    text-decoration: none;
-    font-weight: bold;
+.hero{
+height:80vh;
+background:url('https://images.unsplash.com/photo-1538485399081-7c8979f8a7e8') center/cover;
+display:flex;
+align-items:center;
+justify-content:center;
+flex-direction:column;
+color:white;
+text-align:center;
 }
 
-.hero {
-    background: #333;
-    color: white;
-    padding: 80px 20px;
+.hero h1{
+font-size:50px;
+margin-bottom:10px;
 }
 
-.section {
-    padding: 40px;
+.hero p{
+font-size:20px;
 }
 
-button {
-    padding: 10px 20px;
-    margin: 10px;
-    border: none;
-    background: #ff3b3b;
-    color: white;
-    cursor: pointer;
-    border-radius: 5px;
+.btn{
+margin-top:20px;
+padding:12px 30px;
+background:#ff4d4d;
+border:none;
+color:white;
+font-size:16px;
+border-radius:5px;
+cursor:pointer;
 }
+
+.section{
+padding:70px 20px;
+text-align:center;
+}
+
+.cards{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:25px;
+margin-top:40px;
+}
+
+.card{
+background:white;
+padding:30px;
+width:260px;
+border-radius:10px;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+footer{
+background:#111;
+color:white;
+padding:20px;
+text-align:center;
+}
+
 </style>
-
 </head>
 
 <body>
 
 <header>
-    <h1 id="title">Cairo Korean School</h1>
-    <p id="subtitle">تعلم اللغة والثقافة الكورية</p>
-
-    <button onclick="setLang('ar')">عربي 🇪🇬</button>
-    <button onclick="setLang('ko')">한국어 🇰🇷</button>
-</header>
+<div class="logo">Cairo Korean School</div>
 
 <nav>
-    <a href="#" id="home">الرئيسية</a>
-    <a href="#" id="courses">الكورسات</a>
-    <a href="#" id="about">عنّا</a>
-    <a href="#" id="contact">تواصل</a>
+<a href="#">الرئيسية</a>
+<a href="#">الكورسات</a>
+<a href="#">عن الأكاديمية</a>
+<a href="#">تواصل</a>
 </nav>
+</header>
 
 <section class="hero">
-    <h1 id="heroTitle">ابدأ رحلتك الآن</h1>
-    <p id="heroDesc">تعلم الكورية بسهولة واحتراف</p>
+
+<h1>تعلم اللغة الكورية</h1>
+<p>ابدأ رحلتك نحو كوريا الآن</p>
+
+<button class="btn">ابدأ التعلم</button>
+
 </section>
 
 <section class="section">
-    <h2 id="servicesTitle">خدماتنا</h2>
 
-    <p id="servicesDesc">كورسات - ثقافة - منح</p>
+<h2>خدماتنا</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>كورسات كورية</h3>
+<p>تعلم اللغة من الصفر حتى الاحتراف</p>
+</div>
+
+<div class="card">
+<h3>الثقافة الكورية</h3>
+<p>تعرف على الثقافة والتقاليد الكورية</p>
+</div>
+
+<div class="card">
+<h3>الدراسة في كوريا</h3>
+<p>مساعدة في التقديم للجامعات الكورية</p>
+</div>
+
+</div>
+
 </section>
 
-<script>
-function setLang(lang) {
-    if (lang === 'ar') {
-        document.body.dir = "rtl";
-        document.body.classList.remove("korean");
+<footer>
 
-        document.getElementById("title").innerText = "Cairo Korean School";
-        document.getElementById("subtitle").innerText = "تعلم اللغة والثقافة الكورية";
-        document.getElementById("home").innerText = "الرئيسية";
-        document.getElementById("courses").innerText = "الكورسات";
-        document.getElementById("about").innerText = "عنّا";
-        document.getElementById("contact").innerText = "تواصل";
-        document.getElementById("heroTitle").innerText = "ابدأ رحلتك الآن";
-        document.getElementById("heroDesc").innerText = "تعلم الكورية بسهولة واحتراف";
-        document.getElementById("servicesTitle").innerText = "خدماتنا";
-        document.getElementById("servicesDesc").innerText = "كورسات - ثقافة - منح";
-    }
+© 2026 Cairo Korean School
 
-    if (lang === 'ko') {
-        document.body.dir = "ltr";
-        document.body.classList.add("korean");
-
-        document.getElementById("title").innerText = "카이로 한국 학교";
-        document.getElementById("subtitle").innerText = "한국어와 한국 문화를 배우세요";
-        document.getElementById("home").innerText = "홈";
-        document.getElementById("courses").innerText = "강의";
-        document.getElementById("about").innerText = "소개";
-        document.getElementById("contact").innerText = "문의";
-        document.getElementById("heroTitle").innerText = "지금 시작하세요";
-        document.getElementById("heroDesc").innerText = "쉽고 전문적으로 한국어 배우기";
-        document.getElementById("servicesTitle").innerText = "서비스";
-        document.getElementById("servicesDesc").innerText = "강의 - 문화 - 장학금";
-    }
-}
-</script>
+</footer>
 
 </body>
 </html>
