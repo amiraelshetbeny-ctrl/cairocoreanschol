@@ -5,70 +5,87 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Cairo Korean School</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;600;800&display=swap" rel="stylesheet">
 
 <style>
 
-body{
+*{
 margin:0;
-font-family:'Cairo',sans-serif;
-background:#f5f7fb;
+padding:0;
+box-sizing:border-box;
 }
 
+body{
+font-family:'Cairo',sans-serif;
+background:#f4f6f9;
+}
+
+/* HEADER */
 header{
-background:linear-gradient(90deg,#0f2027,#203a43,#2c5364);
-color:white;
-padding:20px;
+position:fixed;
+width:100%;
+top:0;
+background:rgba(0,0,0,0.7);
+backdrop-filter:blur(10px);
 display:flex;
 justify-content:space-between;
-align-items:center;
+padding:15px 40px;
+z-index:1000;
 }
 
 .logo{
-font-size:22px;
-font-weight:bold;
+color:#fff;
+font-weight:800;
+font-size:20px;
 }
 
 nav a{
-color:white;
-margin:0 15px;
+color:#fff;
+margin:0 10px;
 text-decoration:none;
-font-weight:600;
 }
 
+/* HERO */
 .hero{
-height:80vh;
-background:url('https://images.unsplash.com/photo-1538485399081-7c8979f8a7e8') center/cover;
+height:100vh;
+background:url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34') center/cover;
 display:flex;
-align-items:center;
 justify-content:center;
+align-items:center;
 flex-direction:column;
 color:white;
 text-align:center;
 }
 
 .hero h1{
-font-size:50px;
-margin-bottom:10px;
+font-size:60px;
+animation:fadeDown 1s ease;
 }
 
 .hero p{
+margin-top:10px;
 font-size:20px;
+animation:fadeUp 1s ease;
 }
 
 .btn{
-margin-top:20px;
-padding:12px 30px;
-background:#ff4d4d;
+margin-top:25px;
+padding:12px 35px;
+background:#ff3b3b;
 border:none;
 color:white;
-font-size:16px;
-border-radius:5px;
+border-radius:6px;
 cursor:pointer;
+transition:0.3s;
 }
 
+.btn:hover{
+background:#ff0000;
+}
+
+/* SECTION */
 .section{
-padding:70px 20px;
+padding:80px 20px;
 text-align:center;
 }
 
@@ -83,21 +100,33 @@ margin-top:40px;
 .card{
 background:white;
 padding:30px;
-width:260px;
-border-radius:10px;
-box-shadow:0 10px 25px rgba(0,0,0,0.1);
-transition:0.3s;
+width:270px;
+border-radius:12px;
+box-shadow:0 15px 40px rgba(0,0,0,0.1);
+transition:0.4s;
 }
 
 .card:hover{
-transform:translateY(-10px);
+transform:translateY(-15px) scale(1.03);
 }
 
+/* FOOTER */
 footer{
 background:#111;
 color:white;
-padding:20px;
+padding:25px;
 text-align:center;
+}
+
+/* ANIMATION */
+@keyframes fadeDown{
+from{opacity:0; transform:translateY(-50px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes fadeUp{
+from{opacity:0; transform:translateY(50px);}
+to{opacity:1; transform:translateY(0);}
 }
 
 </style>
@@ -107,53 +136,45 @@ text-align:center;
 
 <header>
 <div class="logo">Cairo Korean School</div>
-
 <nav>
 <a href="#">الرئيسية</a>
 <a href="#">الكورسات</a>
-<a href="#">عن الأكاديمية</a>
+<a href="#">عنّا</a>
 <a href="#">تواصل</a>
 </nav>
 </header>
 
 <section class="hero">
-
-<h1>تعلم اللغة الكورية</h1>
-<p>ابدأ رحلتك نحو كوريا الآن</p>
-
-<button class="btn">ابدأ التعلم</button>
-
+<h1>ابدأ رحلتك نحو كوريا 🇰🇷</h1>
+<p>تعلم اللغة والثقافة باحتراف</p>
+<button class="btn">ابدأ الآن</button>
 </section>
 
 <section class="section">
-
 <h2>خدماتنا</h2>
 
 <div class="cards">
 
 <div class="card">
-<h3>كورسات كورية</h3>
-<p>تعلم اللغة من الصفر حتى الاحتراف</p>
+<h3>تعلم اللغة</h3>
+<p>من مبتدئ إلى متقدم</p>
 </div>
 
 <div class="card">
 <h3>الثقافة الكورية</h3>
-<p>تعرف على الثقافة والتقاليد الكورية</p>
+<p>تعرف على الحياة في كوريا</p>
 </div>
 
 <div class="card">
 <h3>الدراسة في كوريا</h3>
-<p>مساعدة في التقديم للجامعات الكورية</p>
+<p>نساعدك تحقق حلمك</p>
 </div>
 
 </div>
-
 </section>
 
 <footer>
-
 © 2026 Cairo Korean School
-
 </footer>
 
 </body>
